@@ -1,0 +1,13 @@
+CACHE MANIFEST v1
+
+# Offline cache
+# html files
+index.html
+
+# css files
+application.css
+
+# js files
+jquery.js
+nosleep.js
+clock.js
