@@ -3,16 +3,25 @@ $(function() {
   var $clock = $('[data-behaviour~="clock"]')
   var sound = $('[data-behaviour~="clock-sound"]').get(0)
   var noSleep = new NoSleep()
-
-  var enableNoSleep = function() {
-    noSleep.enable();
-    document.removeEventListener('touchstart', enableNoSleep, false);
-  }
-  document.addEventListener('touchstart', enableNoSleep, false);
-
   var endTime = null
   var timeInterval = null
-  var setupDone = false
+
+  var setup = function() {
+    noSleep.enable();
+    sound.play()
+    sound.pause()
+    var previousEndTime = !!localStorage.getItem("endTime") ? (new Date(localStorage.getItem("endTime"))) : null
+
+    if (previousEndTime && previousEndTime > new Date()) {
+      endTime = previousEndTime
+      timeInterval = setInterval(updateClock, 1000)
+    } else {
+      reset()
+    }
+    $('#overlay').remove()
+  }
+
+  $('#overlay').click(setup)
 
   var updateClock = function() {
     $minutes = $clock.find('[data-behaviour~="minutes"]')
@@ -40,17 +49,8 @@ $(function() {
     updateClock()
   }
 
-  var setup = function() {
-    if (!setupDone) {
-      sound.play()
-      sound.pause()
-      setupDone = true
-    }
-  }
-
   $('[data-behaviour~="clock-start"]').on('click', function() {
     if(timeInterval == null) {
-      setup()
       reset()
       localStorage.setItem("endTime", endTime);
       timeInterval = setInterval(updateClock, 1000)
@@ -62,14 +62,4 @@ $(function() {
       reset()
     }
   })
-
-  var previousEndTime = !!localStorage.getItem("endTime") ? (new Date(localStorage.getItem("endTime"))) : null
-
-  if (previousEndTime) {
-    endTime = previousEndTime
-    timeInterval = setInterval(updateClock, 1000)
-  } else {
-    reset()
-  }
-
 })

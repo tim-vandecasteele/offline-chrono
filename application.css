@@ -33,3 +33,18 @@ body {
 #buttons .button-reset {
   background-color: #f44336;
 }
+
+#overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  opacity: 0.8;
+  color: white;
+  font-size: 4em;
+  padding-top: 54%;
+  text-align: center;
+}
