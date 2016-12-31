@@ -1,10 +1,35 @@
-#clock .clock-digits {
-  line-height: 480px;
-  white-space: nowrap;
+body {
   font-family: 'Verdana';
+}
+
+#clock .clock-digits {
+  line-height: 440px;
+  white-space: nowrap;
   font-size: 32em;
   font-weight: bold;
   width: 100%;
   display: block;
   text-align: center;
+}
+
+#buttons {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#buttons .button{
+  width: 15%;
+  display: inline-block;
+  font-size: 25px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#buttons .button-reset {
+  background-color: #f44336;
 }
