@@ -1,5 +1,10 @@
 #clock .clock-digits {
-  line-height: 400px;
+  line-height: 480px;
   white-space: nowrap;
-  font-size: 25em;
+  font-family: 'Verdana';
+  font-size: 32em;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  text-align: center;
 }
