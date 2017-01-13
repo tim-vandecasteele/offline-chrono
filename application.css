@@ -1,8 +1,10 @@
 body {
   font-family: 'Verdana';
+  background-color: black;
 }
 
 #clock .clock-digits {
+  color: white;
   line-height: 440px;
   white-space: nowrap;
   font-size: 32em;
