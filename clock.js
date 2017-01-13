@@ -1,13 +1,10 @@
 $(function() {
   var MINUTES = 25
   var $clock = $('[data-behaviour~="clock"]')
-  var sound = $('[data-behaviour~="clock-sound"]').get(0)
   var endTime = null
   var timeInterval = null
 
   var setup = function() {
-    sound.play()
-    sound.pause()
     var previousEndTime = !!localStorage.getItem("endTime") ? (new Date(localStorage.getItem("endTime"))) : null
 
     if (previousEndTime && previousEndTime > new Date()) {
@@ -16,10 +13,7 @@ $(function() {
     } else {
       reset()
     }
-    $('#overlay').remove()
   }
-
-  $('#overlay').click(setup)
 
   var updateClock = function() {
     $minutes = $clock.find('[data-behaviour~="minutes"]')
@@ -34,7 +28,6 @@ $(function() {
 
     if (remainingTotal <= 0) {
       clearInterval(timeInterval)
-      sound.play()
       timeInterval = null
     }
   }
@@ -60,4 +53,6 @@ $(function() {
       reset()
     }
   })
+
+  setup()
 })

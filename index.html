@@ -6,14 +6,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <script src="jquery.js"></script>
-  <script src="nosleep.js"></script>
   <script src="clock.js"></script>
   <link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
-  <div id="overlay">
-    touch to initialize or resume
-  </div>
   <div id="clock" data-behaviour="clock">
       <span class="clock-digits" data-behaviour="minutes">00</span>
       <span class="clock-digits" data-behaviour="seconds">00</span>
@@ -22,6 +18,5 @@
     <div class="button" data-behaviour="clock-start">start</div>
     <div class="button button-reset" data-behaviour="clock-reset">reset</div>
   </div>
-  <audio src="airhorn.mp3" data-behaviour="clock-sound"> </audio>
 </body>
 </html>
