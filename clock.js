@@ -2,12 +2,10 @@ $(function() {
   var MINUTES = 25
   var $clock = $('[data-behaviour~="clock"]')
   var sound = $('[data-behaviour~="clock-sound"]').get(0)
-  var noSleep = new NoSleep()
   var endTime = null
   var timeInterval = null
 
   var setup = function() {
-    noSleep.enable();
     sound.play()
     sound.pause()
     var previousEndTime = !!localStorage.getItem("endTime") ? (new Date(localStorage.getItem("endTime"))) : null

@@ -1,16 +1,7 @@
-CACHE MANIFEST v4
-
-# Offline cache
-# html files
-index.html
-
-# css files
+CACHE MANIFEST
+# v6
+CACHE:
 application.css
-
-# js files
 jquery.js
-nosleep.js
 clock.js
-
-# sound file
 airhorn.mp3
